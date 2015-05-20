@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <title>
+            FakeBook
+        </title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <!--Self-Defined Css-->
+        <link rel="stylesheet" type="text/css" href="/style1.css">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '673437362752247',
+                    cookie     : true,
+                    status     : true,
+                    xfbml      : true,
+                    version    : 'v2.1',
+                    oauth      : true
+                });
+
+                $(window).triggerHandler('fbAsyncInit');
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            //下面是實作一個登入的function
+            function statusChangeCallback(response) {
+                console.log('statusChangeCallback');
+                console.log(response);
+                // The response object is returned with a status field that lets the
+                // app know the current login status of the person.
+                // Full docs on the response object can be found in the documentation
+                // for FB.getLoginStatus().
+                if (response.status === 'connected') {
+                    // Logged into your app and Facebook.
+                    //testAPI();
+                    FB.api('/me', function(response) {
+                        if(response){
+                            window.localStorage["username"] = response.name;
+                            window.localStorage["userid"] = response.id;
+
+                            location.href = "/forum";
+                        }
+
+                    });
+                } else if (response.status === 'not_authorized') {
+                    // The person is logged into Facebook, but not your app.
+                    document.getElementById('status').innerHTML = 'Please log ' +
+                            'into this app.';
+                } else {
+                    // The person is not logged into Facebook, so we're not sure if
+                    // they are logged into this app or not.
+                    document.getElementById('status').innerHTML = 'Please log ' +
+                            'into Facebook.';
+                }
+            }
+
+            function checkLoginState() {
+                FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                });
+            }
+
+//            function testAPI() {
+//                console.log('Welcome!  Fetching your information.... ');
+//                FB.api('/me', function(response) {
+//                    console.log(response);
+//                    console.log('Successful login for: ' + response.name);
+//                    document.getElementById('status').innerHTML =
+//                            'Thanks for logging in, ' + response.name + '!';
+//                });
+//            }
+
+//            function post(path, params, method) {
+//                method = method || "post"; // Set method to post by default if not specified.
+//
+//                // The rest of this code assumes you are not using a library.
+//                // It can be made less wordy if you use one.
+//                var form = document.createElement("form");
+//                form.setAttribute("method", method);
+//                form.setAttribute("action", path);
+//
+//                for(var key in params) {
+//                    if(params.hasOwnProperty(key)) {
+//                        var hiddenField = document.createElement("input");
+//                        hiddenField.setAttribute("type", "hidden");
+//                        hiddenField.setAttribute("name", key);
+//                        hiddenField.setAttribute("value", params[key]);
+//
+//                        console.log(key);
+//
+//                        form.appendChild(hiddenField);
+//                    }
+//                }
+//
+//                document.body.appendChild(form);
+//                form.submit();
+//            }
+
+//            $(window).bind('fbAsyncInit', function() {
+//                FB.getLoginStatus(function(response) {
+//                    statusChangeCallback(response);
+//                });
+//            });
+        </script>
+
+        <style>
+            nav{
+                position: fixed;
+                background-color: #000000;
+                width: 100%;
+                height: 200px;
+                top: 0px;
+                left: 0px;
+            }
+            aside{
+                position: fixed;
+                width: 200px;
+                height:100%;
+                background-color: #000000
+            }
+
+            footer{
+                position: fixed;
+                background-color: #000000;
+                width: 100%;
+                height: 200px;
+                bottom: 0px;
+                left: 0px;
+            }
+            @media screen and (max-width: 768px){
+                nav{
+                    height: 50px;
+                }
+                aside{
+                    width: 50px;
+                }
+                footer{
+                    height: 50px;
+                }
+            }
+        </style>
+
+    </head>
+<body>
+    <nav></nav>
+    <aside style="left: 0px"></aside>
+    <aside style="right: 0px"></aside>
+
+    <div style="height: 50%; width: 1px; margin-bottom: -30px"></div>
+    <div id="wrap">
+        <div id="fb-root" class="col-md-12 col-sm-12" style="text-align: center; width: 100%; padding-left: 10px">
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-size="xlarge">
+                Login With Facebook
+            </fb:login-button>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+<script>
+
+</script>
+</html>

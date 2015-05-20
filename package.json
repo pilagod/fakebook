@@ -1,0 +1,10 @@
+{
+  "name": "sdm_hw2",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "connect": "^3.3.0",
+    "cookie-session": "^1.0.2",
+    "express": "4.x"
+  }
+}

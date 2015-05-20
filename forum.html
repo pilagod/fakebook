@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>FakeBook Forum</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!--Self-Defined Css-->
+    <link rel="stylesheet" type="text/css" href="/style1.css">
+
+</head>
+<body class="hidden">
+    <div class="row">
+        <nav id="nav_bar" class="nav_bar col-sm-12 col-md-12">
+            <div id="logout" class="link">登出</div>
+            <div id="index" class="link">首頁</div>
+
+
+        <!--<div class="input-group">-->
+            <!--<input type="text" class="form-control" placeholder="Search" >-->
+            <!--<span class="input-group-button">-->
+                <!--<button><span class="glyphicon glyphicon-search"></span></button>-->
+            <!--</span>-->
+        <!--</div>-->
+        </nav>
+    </div>
+
+    <div class="row">
+        <div id="topics" class="col-sm-12 col-md-12">
+            <div id="new_topic">
+                <input type="text" name="txt_new_topic" id="txt_new_topic" placeholder="add new topic">
+                <div id="topic_info">
+                    <textarea name="txt_new_content" id="txt_new_content" placeholder="add new content" rows="4"></textarea>
+                    <span><button class="btn btn-success">Post</button></span>
+                </div>
+            </div>
+
+            <div id="topic_content"></div>
+            <div class="btn btn-primary more">顯示更多</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootbox.min.js"></script>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+
+
+    <!--Self-Defined Javascript-->
+    <script type="text/javascript" src="page_control.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

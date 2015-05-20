@@ -1,0 +1,252 @@
+
+html, body{
+    background-color: lightgray;
+}
+
+input[type="text"], textarea{
+    width: 500px;
+    padding: 5px;
+    resize: none;
+    overflow: hidden;
+}
+
+textarea{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+#topics{
+    margin-top: 80px;
+}
+
+#new_topic {
+    width: 500px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.nav_bar{
+    display: table;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000000;
+    width: 100%;
+    height: 50px;
+    padding: 13px;
+    text-align: center;
+    z-index: 10;
+}
+
+.nav_bar div{
+    display: table-cell;
+    float: right;
+    color: white;
+    padding: 5px 25px;
+    vertical-align: middle;
+}
+
+.nav_bar div.link:hover{
+    background-color: gray;
+    cursor: hand;
+    cursor: pointer;
+}
+
+.nav_bar .input-group{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav_bar input[type="text"]{
+    width: 300px;
+    height: 30px;
+}
+
+.post{
+    background-color: white;
+    padding: 10px;
+    width: 500px;
+    margin: 40px auto;
+    border: 3px solid cornflowerblue;
+    border-radius: 10px;
+}
+
+.post>.info{
+    width: 120px;
+    padding: 5px 0px;
+    margin-left: -160px;
+    text-align: center;
+    border-style: double;
+    border-radius: 5px;
+    background-color: floralwhite;
+    float: left;
+}
+
+.post>.info>.post-img {
+    width: 100px;
+    margin-bottom: 5px;
+    border-width: 10px;
+}
+
+/*.post:hover{*/
+    /*background-color: lightgoldenrodyellow;*/
+/*}*/
+
+.post>.title{
+    color: royalblue;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.post>.author{
+    color: darkgrey;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.post>.time{
+    color: darkgrey;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.post>.content{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.post>.comment{
+    background-color: whitesmoke;
+    padding: 5px;
+    padding-top: 0px;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    /*border-top-style: double;*/
+    /*border-width: 2px;*/
+    /*border-top-color: lightgray;*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.comment>span>textarea{
+    width: 100%;
+}
+
+
+.comment_block>.block{
+    position: relative;
+    overflow: auto;
+    border-bottom: 2px double lightgray;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 5%;
+}
+
+.comment_block>.block>.content{
+    float: left;
+}
+
+.comment_block>.end_block{
+    border-bottom: 3px solid rgba(100, 149, 237, .5);
+}
+
+.comment_block>.begin_block{
+    border-top: 3px solid rgba(100, 149, 237, .5);
+}
+
+.comment_block>.block>.info{
+    width: 100px;
+    float: left;
+    text-align: center;
+    margin-left: -7%;
+}
+
+.comment_block>.block>.info>.block_img {
+    width: 30px;
+}
+
+.comment_block>.block>.info>.author{
+    color: cornflowerblue;
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 1;
+}
+
+.comment_block>.block>.time{
+    position: absolute;
+    right: 1%;
+    bottom: 5%;
+    color: darkgrey;
+    font-size: 12px;
+
+
+}
+
+.comment_block>.block>.more_comments{
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.comment_block>.block>.more_comments:hover{
+    cursor: hand;
+    cursor: pointer;
+}
+
+.more{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.more_comments{
+    padding: 0px;
+    font-weight: bold;
+}
+
+
+
+.delete{
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.post>.delete{
+    opacity: 0.5;
+}
+
+.block>.delete{
+    opacity: 0;
+}
+
+.block:hover>.delete {
+    opacity: 0.5;
+}
+
+.delete:hover{
+    cursor: hand;
+    cursor: pointer;
+}
+
+
+
+
+.arrow-right {
+    border-bottom: 15px solid lightgray;
+    border-top: 15px solid lightgray;
+    border-left: 15px solid white;
+    display: inline-block;
+    float: right;
+    margin-right: -25px;
+}
+
+
+.hidden{
+    display: none;
+}
